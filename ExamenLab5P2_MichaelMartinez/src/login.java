@@ -138,12 +138,12 @@ public class login extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
                     .addComponent(jLabel5)
                     .addComponent(jScrollPane1)
                     .addComponent(jLabel6))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(107, 107, 107))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,8 +540,53 @@ public class login extends javax.swing.JFrame {
                 listaUsuarios.get(i).setNacimiento(fecha);
             }
         }
+        
+        JOptionPane.showMessageDialog(rootPane, "Usuario modificado con éxito");
+        proceso();
     }//GEN-LAST:event_jButton2MouseClicked
-
+    
+    private void proceso(){
+        // TODO add your handling code here:
+     
+//       jTable2.setModel(new DefaultTableModel());
+//        
+        DefaultTableModel x=(DefaultTableModel)jTable1.getModel();
+        x.setRowCount(0);
+            //x.setRowCount(0);
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if (listaUsuarios.get(i) instanceof civiles) {
+                    Object[] newRow = new Object[3];
+                    newRow[0] = listaUsuarios.get(i).nombre;
+                    newRow[1] = listaUsuarios.get(i).identidad;
+                    newRow[2] = listaUsuarios.get(i).nacimiento;
+                    x.addRow(newRow);
+                }
+            }
+            jTable1.setModel(x);
+            
+            //segunda tabla
+            
+            DefaultTableModel y=(DefaultTableModel)jTable2.getModel();
+            
+            y.setRowCount(0);
+            
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if (listaUsuarios.get(i) instanceof civiles) {
+                    Object[] newRow = new Object[4];
+                    for (int j = 0; j < ((civiles)listaUsuarios.get(i)).listaTramites.size();j++) {
+                        newRow[0] = ((civiles) listaUsuarios.get(i)).listaTramites.get(j).nombre;
+                        newRow[1] = ((civiles) listaUsuarios.get(i)).listaTramites.get(j).descripcion;
+                        newRow[2] = ((civiles) listaUsuarios.get(i)).listaTramites.get(j).fecha;
+                        newRow[3] = ((civiles) listaUsuarios.get(i)).identidad;
+                        y.addRow(newRow);
+                    }
+                    
+                }
+            }
+            jTable2.setModel(y);
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
