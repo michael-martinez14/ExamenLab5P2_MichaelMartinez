@@ -62,9 +62,7 @@ public class login extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Nombre", "No. Identiidad", "Fecha de nacimiento"
@@ -82,10 +80,7 @@ public class login extends javax.swing.JFrame {
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Nombre trámite", "Descripción", "Fecha", "Numero identidad"
@@ -309,7 +304,7 @@ public class login extends javax.swing.JFrame {
             jd_empleado.setVisible(true);
             jd_empleado.pack();
             DefaultTableModel x=(DefaultTableModel)jTable1.getModel();
-            x.setRowCount(0);
+            //x.setRowCount(0);
             for (int i = 0; i < listaUsuarios.size(); i++) {
                 if (listaUsuarios.get(i) instanceof civiles) {
                     Object[] newRow = new Object[3];
@@ -320,6 +315,25 @@ public class login extends javax.swing.JFrame {
                 }
             }
             jTable1.setModel(x);
+            
+            //segunda tabla
+            DefaultTableModel y=(DefaultTableModel)jTable2.getModel();
+            //y.setRowCount(0);
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if (listaUsuarios.get(i) instanceof civiles) {
+                    Object[] newRow = new Object[4];
+                    for (int j = 0; j < ((civiles)listaUsuarios.get(i)).listaTramites.size();j++) {
+                        newRow[0] = ((civiles) listaUsuarios.get(i)).listaTramites.get(j).nombre;
+                        newRow[1] = ((civiles) listaUsuarios.get(i)).listaTramites.get(j).descripcion;
+                        newRow[2] = ((civiles) listaUsuarios.get(i)).listaTramites.get(j).fecha;
+                        newRow[3] = ((civiles) listaUsuarios.get(i)).identidad;
+                        y.addRow(newRow);
+                    }
+                    
+                }
+            }
+            jTable2.setModel(y);
+            
         }else if(tf_nombre.getText().equalsIgnoreCase(nombreCivil)&& new String (pf_contraseña.getPassword()).
                 equalsIgnoreCase(listaUsuarios.get(1).contraseña)){
             jLabel4.setText(nombre);
