@@ -113,7 +113,7 @@ public class civiles extends usuarios{
             id="0000-";
         }
         id+=nacimiento.getYear()+"-";
-        double ultimo=random.nextDouble(10000,40000);
+         int ultimo=random.nextInt(10000,40000);
         id+=ultimo;
         return id;
     }

@@ -308,19 +308,18 @@ public class login extends javax.swing.JFrame {
             this.setVisible(false);
             jd_empleado.setVisible(true);
             jd_empleado.pack();
-            
+            DefaultTableModel x=(DefaultTableModel)jTable1.getModel();
+            x.setRowCount(0);
             for (int i = 0; i < listaUsuarios.size(); i++) {
-                DefaultTableModel x=(DefaultTableModel)jTable1.getModel();
                 if (listaUsuarios.get(i) instanceof civiles) {
                     Object[] newRow = new Object[3];
                     newRow[0] = listaUsuarios.get(i).nombre;
                     newRow[1] = listaUsuarios.get(i).identidad;
                     newRow[2] = listaUsuarios.get(i).nacimiento;
-                    x.addColumn(newRow);
-                    jTable1.setModel(x);
+                    x.addRow(newRow);
                 }
-
             }
+            jTable1.setModel(x);
         }else if(tf_nombre.getText().equalsIgnoreCase(nombreCivil)&& new String (pf_contraseña.getPassword()).
                 equalsIgnoreCase(listaUsuarios.get(1).contraseña)){
             jLabel4.setText(nombre);
