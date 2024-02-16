@@ -87,7 +87,7 @@ public class civiles extends usuarios{
 
     @Override
     public String toString() {
-        return "civiles{" + "listaTramites=" + listaTramites + '}';
+        return super.toString();
     }
 
     @Override

@@ -82,7 +82,7 @@ public abstract class usuarios {
 
     @Override
     public String toString() {
-        return "usuarios{" + "nombre=" + nombre + ", apellido=" + apellido + ", contrase\u00f1a=" + contraseña + ", sexo=" + sexo + ", departamento=" + departamento + ", identidad=" + identidad + ", nacimiento=" + nacimiento + '}';
+        return identidad ;
     }
     
     abstract String id();

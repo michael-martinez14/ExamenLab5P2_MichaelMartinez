@@ -159,6 +159,11 @@ public class login extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("INFORMACION CIVILES", jPanel1);
 
+        cb_usuarios.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_usuariosItemStateChanged(evt);
+            }
+        });
         cb_usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb_usuariosActionPerformed(evt);
@@ -471,6 +476,26 @@ public class login extends javax.swing.JFrame {
     private void cb_usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_usuariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_usuariosActionPerformed
+
+    private void cb_usuariosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_usuariosItemStateChanged
+        // TODO add your handling code here:
+        
+        tf_nombre.setText(((civiles)cb_usuarios.getSelectedItem()).nombre);
+        tf_apellido.setText(((civiles)cb_usuarios.getSelectedItem()).apellido);
+        tf_contra.setText(((civiles)cb_usuarios.getSelectedItem()).contraseña);
+        if (((civiles)cb_usuarios.getSelectedItem()).sexo.equalsIgnoreCase("Masculino")) {
+            cb_sexo.setSelectedIndex(0);
+        }else if(((civiles)cb_usuarios.getSelectedItem()).sexo.equalsIgnoreCase("Femenino")){
+            cb_sexo.setSelectedIndex(1);
+        }
+        if (((civiles)cb_usuarios.getSelectedItem()).departamento.equalsIgnoreCase("Francisco Morazán")) {
+            cb_deptos.setSelectedIndex(0);
+        }else if(((civiles)cb_usuarios.getSelectedItem()).departamento.equalsIgnoreCase("Francisco Morazán")){
+            cb_deptos.setSelectedIndex(1);
+        }else if(((civiles)cb_usuarios.getSelectedItem()).departamento.equalsIgnoreCase("Francisco Morazán")){
+            cb_deptos.setSelectedIndex(2);
+        }
+    }//GEN-LAST:event_cb_usuariosItemStateChanged
 
     /**
      * @param args the command line arguments
