@@ -209,6 +209,11 @@ public class login extends javax.swing.JFrame {
                 jButton2MouseClicked(evt);
             }
         });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -413,8 +418,6 @@ public class login extends javax.swing.JFrame {
         jTabbedPane3.addTab("Información personal", jPanel3);
 
         jLabel16.setText("Nombre");
-
-        tf_nombretramite.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel17.setText("Descripción");
 
@@ -823,12 +826,53 @@ public class login extends javax.swing.JFrame {
         String nombre=tf_nombretramite.getText();
         String descripcion=tf_descripcionTramite.getText();
         persona.listaTramites.add(new tramite(nombre, descripcion, persona.identidad, new Date()));
+        if (tf_nombre.getText().equalsIgnoreCase("Michael Martinez")) {
+            persona.setNombre(listaUsuarios.get(1).nombre);
+            persona.setIdentidad(listaUsuarios.get(1).identidad);
+            persona.setNacimiento(listaUsuarios.get(1).nacimiento);
+        } else if (tf_nombre.getText().equalsIgnoreCase("Alexander Cabrera")) {
+
+            //nombre2=listaUsuarios.get(2).nombre+" "+listaUsuarios.get(2).apellido;
+            persona.setNombre(listaUsuarios.get(2).nombre);
+            persona.setIdentidad(listaUsuarios.get(2).identidad);
+            persona.setNacimiento(listaUsuarios.get(2).nacimiento);
+        }
+        DefaultTableModel x=(DefaultTableModel)jTable4.getModel();
+            x.setRowCount(0);
+            //x.setRowCount(0);
+                    Object[] newRow = new Object[3];
+                    newRow[0] = persona.nombre;
+                    
+                    newRow[1] = persona.identidad;
+                    newRow[2] = persona.nacimiento;
+                    x.addRow(newRow);
+            jTable4.setModel(x);
+            
+            //segunda tabla
+            
+            DefaultTableModel y=(DefaultTableModel)jTable5.getModel();
+            
+            y.setRowCount(0);
+        Object[] newRow2 = new Object[4];
+        for (int j = 0; j < persona.listaTramites.size(); j++) {
+            newRow2[0] = persona.listaTramites.get(j).nombre;
+            newRow2[1] = persona.listaTramites.get(j).descripcion;
+            newRow2[2] = persona.listaTramites.get(j).fecha;
+            newRow2[3] = persona.identidad;
+            y.addRow(newRow2);
+        }
+        jTable5.setModel(y);
+        
         JOptionPane.showMessageDialog(rootPane, "Trámite enviado");
     }//GEN-LAST:event_jb_enviarMouseClicked
 
     private void jb_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_enviarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_enviarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     private void proceso(){
         // TODO add your handling code here:
