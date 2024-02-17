@@ -14,6 +14,10 @@ public abstract class usuarios {
     String nombre,apellido,contraseña,sexo,departamento,identidad;
     Date nacimiento;
 
+    public usuarios() {
+    }
+    
+
     public usuarios(String nombre, String apellido, String contraseña, String sexo, String departamento, String identidad, Date nacimiento) {
         this.nombre = nombre;
         this.apellido = apellido;

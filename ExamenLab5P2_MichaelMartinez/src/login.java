@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Michael Martínez
+ * //fila 2 asiento 7
  */
 public class login extends javax.swing.JFrame {
 
@@ -82,7 +83,26 @@ public class login extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jd_civil = new javax.swing.JDialog();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        tf_nombretramite = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tf_descripcionTramite = new javax.swing.JTextArea();
+        jb_enviar = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        tf_civil = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jl_nombre = new javax.swing.JLabel();
         tf_nombre = new javax.swing.JTextField();
@@ -318,22 +338,202 @@ public class login extends javax.swing.JFrame {
 
         jd_civil.setBackground(new java.awt.Color(102, 204, 0));
 
+        jLabel14.setText("Información personal");
+
+        jLabel15.setText("Trámite");
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre Completo", "No. Identidad", "Fecha de nacimiento"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(jTable4);
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre de trámite", "Descripción", "Fecha", "No. identidad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(jTable5);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel14)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                            .addGap(46, 46, 46)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 69, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
+        );
+
+        jTabbedPane3.addTab("Información personal", jPanel3);
+
+        jLabel16.setText("Nombre");
+
+        tf_nombretramite.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel17.setText("Descripción");
+
+        tf_descripcionTramite.setColumns(20);
+        tf_descripcionTramite.setRows(5);
+        jScrollPane6.setViewportView(tf_descripcionTramite);
+
+        jb_enviar.setText("ENVIAR");
+        jb_enviar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_enviarMouseClicked(evt);
+            }
+        });
+        jb_enviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_enviarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(245, 245, 245)
+                        .addComponent(jLabel16))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(jLabel17)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 40, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(tf_nombretramite, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jb_enviar)
+                        .addGap(236, 236, 236))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tf_nombretramite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jb_enviar))
+        );
+
+        jTabbedPane3.addTab("Gestión de trámites", jPanel4);
+
+        jLabel13.setText("Bienvenido");
+
+        jButton3.setText("Cerrar Sesión");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_civilLayout = new javax.swing.GroupLayout(jd_civil.getContentPane());
         jd_civil.getContentPane().setLayout(jd_civilLayout);
         jd_civilLayout.setHorizontalGroup(
             jd_civilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_civilLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 583, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jd_civilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_civilLayout.createSequentialGroup()
+                        .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(29, Short.MAX_VALUE))
+                    .addGroup(jd_civilLayout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(tf_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53))))
         );
         jd_civilLayout.setVerticalGroup(
             jd_civilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_civilLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jd_civilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_civil))
+                .addGap(61, 61, 61)
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -427,7 +627,20 @@ public class login extends javax.swing.JFrame {
 
     private void jb_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ingresarMouseClicked
         // TODO add your handling code here:
-        String nombre=listaUsuarios.get(0).nombre+" "+listaUsuarios.get(0).apellido;
+        String nombre="";
+        String nombre2="";
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i)instanceof empleado) {
+                nombre=listaUsuarios.get(i).nombre+" "+listaUsuarios.get(i).apellido;
+            }else if (listaUsuarios.get(i)instanceof civiles){
+                nombre2=listaUsuarios.get(i).nombre+" "+listaUsuarios.get(i).apellido;
+                persona.setNombre(listaUsuarios.get(i).nombre);
+                persona.setIdentidad(listaUsuarios.get(i).identidad);
+                persona.setNacimiento(listaUsuarios.get(i).nacimiento);
+            }
+        }
+        
+        
         String nombreCivil=listaUsuarios.get(1).nombre+" "+listaUsuarios.get(1).apellido;
         if (tf_nombre.getText().equalsIgnoreCase(nombre)&& new String (pf_contraseña.getPassword()).
                 equalsIgnoreCase(listaUsuarios.get(0).contraseña)) {
@@ -467,14 +680,45 @@ public class login extends javax.swing.JFrame {
             }
             jTable2.setModel(y);
             
-        }else if(tf_nombre.getText().equalsIgnoreCase(nombreCivil)&& new String (pf_contraseña.getPassword()).
-                equalsIgnoreCase(listaUsuarios.get(1).contraseña)){
-            jLabel4.setText(nombre);
+            //está validado para que dos civiles agregados de último ingresen sesión 
+        }else if(tf_nombre.getText().equalsIgnoreCase(nombre2)&& new String (pf_contraseña.getPassword()).
+                equalsIgnoreCase(listaUsuarios.get(1).contraseña )||new String (pf_contraseña.getPassword()).
+                equalsIgnoreCase(listaUsuarios.get(2).contraseña )){
+            tf_civil.setText(nombre2);
             nombreCivil="";
             this.setVisible(false);
             jd_civil.setVisible(true);
             jd_civil.pack();
+            DefaultTableModel x=(DefaultTableModel)jTable4.getModel();
+        x.setRowCount(0);
+            //x.setRowCount(0);
+                    Object[] newRow = new Object[3];
+                    newRow[0] = persona.nombre;
+                    newRow[1] = persona.identidad;
+                    newRow[2] = persona.nacimiento;
+                    x.addRow(newRow);
+            jTable4.setModel(x);
             
+            //segunda tabla
+            
+            DefaultTableModel y=(DefaultTableModel)jTable5.getModel();
+            
+            y.setRowCount(0);
+            
+            for (int i = 0; i < listaUsuarios.size(); i++) {
+                if (listaUsuarios.get(i)==persona) {
+                    Object[] newRow2 = new Object[4];
+                    for (int j = 0; j < ((civiles)listaUsuarios.get(i)).listaTramites.size();j++) {
+                        newRow2[0] = persona.listaTramites.get(j).nombre;
+                        newRow2[1] = persona.listaTramites.get(j).descripcion;
+                        newRow2[2] = persona.listaTramites.get(j).fecha;
+                        newRow2[3] = persona.identidad;
+                        y.addRow(newRow);
+                    }
+                    
+                }
+            }
+            jTable5.setModel(y);
         }else{
             tf_nombre.setText("");
             pf_contraseña.setText("");
@@ -544,6 +788,34 @@ public class login extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, "Usuario modificado con éxito");
         proceso();
     }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        tf_nombre.setText("");
+        pf_contraseña.setText("");
+        persona.setNombre("");
+        persona.setIdentidad("");
+        persona.setNacimiento(new Date());
+        persona.listaTramites.clear();
+        jd_civil.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jb_enviarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_enviarMouseClicked
+        // TODO add your handling code here:
+        String nombre=tf_nombretramite.getText();
+        String descripcion=tf_descripcionTramite.getText();
+        persona.listaTramites.add(new tramite(nombre, descripcion, persona.identidad, new Date()));
+        JOptionPane.showMessageDialog(rootPane, "Trámite enviado");
+    }//GEN-LAST:event_jb_enviarMouseClicked
+
+    private void jb_enviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_enviarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_enviarActionPerformed
     
     private void proceso(){
         // TODO add your handling code here:
@@ -632,6 +904,11 @@ public class login extends javax.swing.JFrame {
                 (new Date(2003, 8, 14)));
         listaUsuarios.add(civil);
         
+         usuarios civil2=new civiles("Alexander", "Cabrera", "mike123",
+                "Masculino", "Cortés", "",
+                (new Date(2003, 8, 14)));
+        listaUsuarios.add(civil2);
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new login().setVisible(true);
@@ -639,6 +916,7 @@ public class login extends javax.swing.JFrame {
         });
     }
     public static ArrayList<usuarios>listaUsuarios=new ArrayList();
+    civiles persona=new civiles();
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -647,11 +925,17 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_usuarios;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -662,20 +946,33 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JButton jb_enviar;
     private javax.swing.JButton jb_ingresar;
     private javax.swing.JDialog jd_civil;
     private javax.swing.JDialog jd_empleado;
     private javax.swing.JLabel jl_nombre;
     private javax.swing.JPasswordField pf_contraseña;
     private javax.swing.JTextField tf_apellido;
+    private javax.swing.JLabel tf_civil;
     private javax.swing.JTextField tf_contra;
+    private javax.swing.JTextArea tf_descripcionTramite;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombreM;
+    private javax.swing.JTextField tf_nombretramite;
     // End of variables declaration//GEN-END:variables
 }

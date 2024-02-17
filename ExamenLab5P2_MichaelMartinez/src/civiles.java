@@ -15,6 +15,10 @@ import java.util.Random;
 public class civiles extends usuarios{
     ArrayList<tramite> listaTramites=new ArrayList();
 
+    public civiles() {
+    }
+    
+
     public civiles(String nombre, String apellido, String contraseña, String sexo, String departamento, String identidad, Date nacimiento) {
         super(nombre, apellido, contraseña, sexo, departamento, identidad, nacimiento);
         this.identidad=setIdentidad();
