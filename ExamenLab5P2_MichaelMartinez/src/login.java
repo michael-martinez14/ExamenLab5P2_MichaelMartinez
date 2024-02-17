@@ -503,7 +503,7 @@ public class login extends javax.swing.JFrame {
                         .addContainerGap(29, Short.MAX_VALUE))
                     .addGroup(jd_civilLayout.createSequentialGroup()
                         .addComponent(jLabel13)
-                        .addGap(18, 18, 18)
+                        .addGap(146, 146, 146)
                         .addComponent(tf_civil, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -627,23 +627,13 @@ public class login extends javax.swing.JFrame {
 
     private void jb_ingresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_ingresarMouseClicked
         // TODO add your handling code here:
-        String nombre="";
-        String nombre2="";
-        for (int i = 0; i < listaUsuarios.size(); i++) {
-            if (listaUsuarios.get(i)instanceof empleado) {
-                nombre=listaUsuarios.get(i).nombre+" "+listaUsuarios.get(i).apellido;
-            }else if (listaUsuarios.get(i)instanceof civiles){
-                nombre2=listaUsuarios.get(i).nombre+" "+listaUsuarios.get(i).apellido;
-                persona.setNombre(listaUsuarios.get(i).nombre);
-                persona.setIdentidad(listaUsuarios.get(i).identidad);
-                persona.setNacimiento(listaUsuarios.get(i).nacimiento);
-            }
-        }
-        
-        
+        String nombre=listaUsuarios.get(0).nombre+" "+listaUsuarios.get(0).apellido;;
+        String nombre2=listaUsuarios.get(1).nombre+" "+listaUsuarios.get(1).apellido;
+        String nombre3=listaUsuarios.get(2).nombre+" "+listaUsuarios.get(2).apellido;
         String nombreCivil=listaUsuarios.get(1).nombre+" "+listaUsuarios.get(1).apellido;
         if (tf_nombre.getText().equalsIgnoreCase(nombre)&& new String (pf_contraseña.getPassword()).
                 equalsIgnoreCase(listaUsuarios.get(0).contraseña)) {
+            
             jLabel4.setText(nombre);
             nombre="";
             this.setVisible(false);
@@ -682,18 +672,35 @@ public class login extends javax.swing.JFrame {
             
             //está validado para que dos civiles agregados de último ingresen sesión 
         }else if(tf_nombre.getText().equalsIgnoreCase(nombre2)&& new String (pf_contraseña.getPassword()).
-                equalsIgnoreCase(listaUsuarios.get(1).contraseña )||new String (pf_contraseña.getPassword()).
+                equalsIgnoreCase(listaUsuarios.get(1).contraseña ) || tf_nombre.getText().equalsIgnoreCase(nombre3)&& new String (pf_contraseña.getPassword()).
                 equalsIgnoreCase(listaUsuarios.get(2).contraseña )){
-            tf_civil.setText(nombre2);
-            nombreCivil="";
+            
+            
+            persona.setNombre("");
+            persona.setIdentidad("");
+            persona.setNacimiento(new Date());
+            persona.listaTramites.clear();
+            if (tf_nombre.getText().equalsIgnoreCase("Michael Martinez")) {
+                persona.setNombre(listaUsuarios.get(1).nombre);
+                persona.setIdentidad(listaUsuarios.get(1).identidad);
+                persona.setNacimiento(listaUsuarios.get(1).nacimiento);
+            }else if (tf_nombre.getText().equalsIgnoreCase("Alexander Cabrera")) {
+                
+               //nombre2=listaUsuarios.get(2).nombre+" "+listaUsuarios.get(2).apellido;
+                persona.setNombre(listaUsuarios.get(2).nombre);
+                persona.setIdentidad(listaUsuarios.get(2).identidad);
+                persona.setNacimiento(listaUsuarios.get(2).nacimiento);
+            }
+            tf_civil.setText(tf_nombre.getText());
             this.setVisible(false);
             jd_civil.setVisible(true);
             jd_civil.pack();
             DefaultTableModel x=(DefaultTableModel)jTable4.getModel();
-        x.setRowCount(0);
+            x.setRowCount(0);
             //x.setRowCount(0);
                     Object[] newRow = new Object[3];
                     newRow[0] = persona.nombre;
+                    
                     newRow[1] = persona.identidad;
                     newRow[2] = persona.nacimiento;
                     x.addRow(newRow);
@@ -713,12 +720,18 @@ public class login extends javax.swing.JFrame {
                         newRow2[1] = persona.listaTramites.get(j).descripcion;
                         newRow2[2] = persona.listaTramites.get(j).fecha;
                         newRow2[3] = persona.identidad;
-                        y.addRow(newRow);
+                        y.addRow(newRow2);
                     }
                     
                 }
             }
             jTable5.setModel(y);
+            persona.setNombre("");
+            persona.setIdentidad("");
+            persona.setNacimiento(new Date());
+            persona.listaTramites.clear();
+            
+            
         }else{
             tf_nombre.setText("");
             pf_contraseña.setText("");
